@@ -1,0 +1,82 @@
+MNIST: DNN vs CNN Performance
+
+Deep Neural Network (DNN)
+
+A DNN treats each 28×28 image as a flat vector of 784 pixel values.
+
+Characteristics
+
+-   Ignores the spatial relationship between neighboring pixels.
+-   Uses fully connected (Dense) layers.
+-   Contains a large number of parameters.
+-   More prone to overfitting than a CNN of similar capability.
+
+Typical Accuracy
+
+-   Around 97–99% on MNIST with a well-tuned network.
+
+------------------------------------------------------------------------
+
+Convolutional Neural Network (CNN)
+
+A CNN processes the image as a 2D image rather than flattening it
+immediately.
+
+Characteristics
+
+-   Learns local features such as edges, curves, and strokes.
+-   Preserves spatial information.
+-   Uses convolution and pooling layers.
+-   Requires fewer trainable parameters than an equally powerful fully
+    connected network.
+-   Generalizes better to unseen handwritten digits.
+
+Typical Accuracy
+
+-   Around 99–99.7% on MNIST with standard CNN architectures.
+
+------------------------------------------------------------------------
+
+Why CNNs Improve Accuracy
+
+1.  Spatial awareness
+    -   Neighboring pixels are processed together.
+    -   Handwritten digits are recognized by their shapes instead of
+        isolated pixel values.
+2.  Feature hierarchy
+    -   Early layers detect edges.
+    -   Middle layers detect curves and corners.
+    -   Deeper layers recognize complete digit patterns.
+3.  Parameter sharing
+    -   The same convolution filter is applied across the entire image.
+    -   This reduces the number of parameters and improves efficiency.
+4.  Translation robustness
+    -   Digits shifted slightly within the image can still be recognized
+        correctly.
+5.  Reduced overfitting
+    -   CNNs learn more meaningful visual features with fewer
+        parameters.
+
+------------------------------------------------------------------------
+
+Performance Comparison
+
+  Feature                      DNN                    CNN
+  ---------------------------- ---------------------- -------------
+  Input                        Flattened 784-vector   28×28 image
+  Uses spatial information     No                     Yes
+  Learns edges automatically   No                     Yes
+  Parameter efficiency         Lower                  Higher
+  Typical MNIST accuracy       97–99%                 99–99.7%
+  Best suited for images       Limited                Excellent
+
+------------------------------------------------------------------------
+
+Conclusion
+
+While a DNN can classify handwritten digits with high accuracy, it
+ignores the spatial structure of images. CNNs exploit the
+two-dimensional nature of images, automatically learn visual features
+such as edges and curves, require fewer effective parameters, and
+consistently achieve higher accuracy on MNIST. For image classification
+tasks, CNNs are the preferred architecture.
